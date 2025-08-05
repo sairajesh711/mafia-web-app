@@ -1,0 +1,17 @@
+name = "mafia-backend"
+main = "src/worker.ts"
+compatibility_date = "2025-08-01"
+
+[durable_objects]
+bindings = [
+  { name = "LOBBY", class_name = "LobbyDO" }
+]
+
+[[migrations]]
+tag = "v1"
+new_classes = ["LobbyDO"]
+
+# For development, we don't need assets binding
+# [assets]
+# directory = ".svelte-kit/cloudflare"
+# binding = "ASSETS"
